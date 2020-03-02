@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Jigsaw\.Rider2019.2\config\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\Jigsaw\.Rider2019.2\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\Jigsaw\.Rider2019.2\config\scratches" t="IncludeRecursive" />
+    <e p="C:\Users\Jigsaw\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Jigsaw\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_GridSoccer.1137345006.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Jigsaw\GridSoccer" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="ML-Agents" t="Include">
+          <e p="Editor" t="Include">
+            <e p="AgentEditor.cs" t="Include" />
+            <e p="BrainEditor.cs" t="Include" />
+            <e p="BrainParametersDrawer.cs" t="Include" />
+            <e p="BroadcastHubDrawer.cs" t="Include" />
+            <e p="Builder.cs" t="Include" />
+            <e p="BuilderUtils.cs" t="Include" />
+            <e p="DemonstrationDrawer.cs" t="Include" />
+            <e p="DemonstrationImporter.cs" t="Include" />
+            <e p="HeuristicBrainEditor.cs" t="Include" />
+            <e p="LearningBrainEditor.cs" t="Include" />
+            <e p="PlayerBrainEditor.cs" t="Include" />
+            <e p="ResetParameterDrawer.cs" t="Include" />
+            <e p="Tests" t="Include">
+              <e p="DemonstrationTests.cs" t="Include" />
+              <e p="DiscreteActionOutputApplierTest.cs" t="Include" />
+              <e p="EditModeTestActionMasker.cs" t="Include" />
+              <e p="EditModeTestInternalBrainTensorApplier.cs" t="Include" />
+              <e p="EditModeTestInternalBrainTensorGenerator.cs" t="Include" />
+              <e p="MLAgentsEditModeTest.cs" t="Include" />
+              <e p="MultinomialTest.cs" t="Include" />
+              <e p="RandomNormalTest.cs" t="Include" />
+              <e p="RayPerceptionTests.cs" t="Include" />
+              <e p="TensorUtilsTest.cs" t="Include" />
+              <e p="UtilitiesTests.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Examples" t="Include">
+            <e p="3DBall" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="Ball3DAcademy.cs" t="Include" />
+                <e p="Ball3DAgent.cs" t="Include" />
+                <e p="Ball3DDecision.cs" t="Include" />
+                <e p="Ball3DHardAgent.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Basic" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="BasicAcademy.cs" t="Include" />
+                <e p="BasicAgent.cs" t="Include" />
+                <e p="BasicDecision.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Bouncer" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="BouncerAcademy.cs" t="Include" />
+                <e p="BouncerAgent.cs" t="Include" />
+                <e p="BouncerTarget.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Crawler" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="CrawlerAcademy.cs" t="Include" />
+                <e p="CrawlerAgent.cs" t="Include" />
+              </e>
+            </e>
+            <e p="FoodCollector" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="FoodCollectorAcademy.cs" t="Include" />
+                <e p="FoodCollectorAgent.cs" t="Include" />
+                <e p="FoodCollectorArea.cs" t="Include" />
+                <e p="FoodLogic.cs" t="Include" />
+              </e>
+            </e>
+            <e p="GridWorld" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="GridAcademy.cs" t="Include" />
+                <e p="GridAgent.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Hallway" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="HallwayAcademy.cs" t="Include" />
+                <e p="HallwayAgent.cs" t="Include" />
+              </e>
+            </e>
+            <e p="PushBlock" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="GoalDetect.cs" t="Include" />
+                <e p="PushAgentBasic.cs" t="Include" />
+                <e p="PushBlockAcademy.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Pyramids" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="PyramidAcademy.cs" t="Include" />
+                <e p="PyramidAgent.cs" t="Include" />
+                <e p="PyramidArea.cs" t="Include" />
+                <e p="PyramidSwitch.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Reacher" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="ReacherAcademy.cs" t="Include" />
+                <e p="ReacherAgent.cs" t="Include" />
+                <e p="ReacherDecision.cs" t="Include" />
+                <e p="ReacherGoal.cs" t="Include" />
+              </e>
+            </e>
+            <e p="SharedAssets" t="Include">
+              <e p="Materials" t="Include">
+                <e p="GridPatternShader.shader" t="Include" />
+                <e p="ShaderOutline.shader" t="Include" />
+                <e p="ShaderRadialGrid.shader" t="Include" />
+              </e>
+              <e p="Scripts" t="Include">
+                <e p="AdjustTrainingTimescale.cs" t="Include" />
+                <e p="Area.cs" t="Include" />
+                <e p="CameraFollow.cs" t="Include" />
+                <e p="FlyCamera.cs" t="Include" />
+                <e p="GroundContact.cs" t="Include" />
+                <e p="JointDriveController.cs" t="Include" />
+                <e p="RandomDecision.cs" t="Include" />
+                <e p="RayPerception.cs" t="Include" />
+                <e p="RayPerception2D.cs" t="Include" />
+                <e p="RayPerception3D.cs" t="Include" />
+                <e p="TargetContact.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Soccer" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="AgentSoccer.cs" t="Include" />
+                <e p="SoccerAcademy.cs" t="Include" />
+                <e p="SoccerBallController.cs" t="Include" />
+                <e p="SoccerFieldArea.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Template" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="TemplateAcademy.cs" t="Include" />
+                <e p="TemplateAgent.cs" t="Include" />
+                <e p="TemplateDecision.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Tennis" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="HitWall.cs" t="Include" />
+                <e p="TennisAcademy.cs" t="Include" />
+                <e p="TennisAgent.cs" t="Include" />
+                <e p="TennisArea.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Walker" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="WalkerAcademy.cs" t="Include" />
+                <e p="WalkerAgent.cs" t="Include" />
+              </e>
+            </e>
+            <e p="WallJump" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="WallJumpAcademy.cs" t="Include" />
+                <e p="WallJumpAgent.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Plugins" t="Include">
+            <e p="Barracuda.Core" t="Include">
+              <e p="Barracuda" t="Include">
+                <e p="Plugins" t="Include">
+                  <e p="Editor" t="Include">
+                    <e p="BarracudaEditor" t="Include">
+                      <e p="Barracuda-editor.asmdef" t="Include" />
+                      <e p="NNModelImporter.cs" t="Include" />
+                    </e>
+                  </e>
+                  <e p="iOS" t="Include">
+                    <e p="iOSBLAS.asmdef" t="Include" />
+                    <e p="iOSBLAS.cs" t="Include" />
+                  </e>
+                  <e p="OSX" t="Include">
+                    <e p="MacBLAS.asmdef" t="Include" />
+                    <e p="MacBLAS.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="Resources" t="Include">
+                  <e p="Activation.compute" t="Include" />
+                  <e p="BarracudaReferenceImpl.compute" t="Include" />
+                  <e p="Broadcast.compute" t="Include" />
+                  <e p="Conv.compute" t="Include" />
+                  <e p="ConvOld.compute" t="Include" />
+                  <e p="Dense.compute" t="Include" />
+                  <e p="DenseFP16.compute" t="Include" />
+                  <e p="Experimental.compute" t="Include" />
+                  <e p="FastNV.compute" t="Include" />
+                  <e p="Generic.compute" t="Include" />
+                  <e p="Random.cginc" t="Include" />
+                  <e p="Tensor.cginc" t="Include" />
+                  <e p="TexConv.compute" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="Academy.cs" t="Include" />
+            <e p="ActionMasker.cs" t="Include" />
+            <e p="Agent.cs" t="Include" />
+            <e p="Batcher.cs" t="Include" />
+            <e p="BCTeacherHelper.cs" t="Include" />
+            <e p="Brain.cs" t="Include" />
+            <e p="BrainParameters.cs" t="Include" />
+            <e p="BroadcastHub.cs" t="Include" />
+            <e p="CommunicatorObjects" t="Include">
+              <e p="AgentActionProto.cs" t="Include" />
+              <e p="AgentInfoProto.cs" t="Include" />
+              <e p="BrainParametersProto.cs" t="Include" />
+              <e p="CommandProto.cs" t="Include" />
+              <e p="CustomAction.cs" t="Include" />
+              <e p="CustomObservation.cs" t="Include" />
+              <e p="CustomResetParameters.cs" t="Include" />
+              <e p="DemonstrationMetaProto.cs" t="Include" />
+              <e p="EngineConfigurationProto.cs" t="Include" />
+              <e p="EnvironmentParametersProto.cs" t="Include" />
+              <e p="Header.cs" t="Include" />
+              <e p="ResolutionProto.cs" t="Include" />
+              <e p="SpaceTypeProto.cs" t="Include" />
+              <e p="UnityInput.cs" t="Include" />
+              <e p="UnityMessage.cs" t="Include" />
+              <e p="UnityOutput.cs" t="Include" />
+              <e p="UnityRlInitializationInput.cs" t="Include" />
+              <e p="UnityRlInitializationOutput.cs" t="Include" />
+              <e p="UnityRlInput.cs" t="Include" />
+              <e p="UnityRlOutput.cs" t="Include" />
+              <e p="UnityToExternal.cs" t="Include" />
+              <e p="UnityToExternalGrpc.cs" t="Include" />
+            </e>
+            <e p="Decision.cs" t="Include" />
+            <e p="Demonstration.cs" t="Include" />
+            <e p="DemonstrationRecorder.cs" t="Include" />
+            <e p="DemonstrationStore.cs" t="Include" />
+            <e p="HeuristicBrain.cs" t="Include" />
+            <e p="ICommunicator.cs" t="Include" />
+            <e p="InferenceBrain" t="Include">
+              <e p="ApplierImpl.cs" t="Include" />
+              <e p="BarracudaModelParamLoader.cs" t="Include" />
+              <e p="GeneratorImpl.cs" t="Include" />
+              <e p="TensorApplier.cs" t="Include" />
+              <e p="TensorGenerator.cs" t="Include" />
+              <e p="TensorNames.cs" t="Include" />
+              <e p="TensorProxy.cs" t="Include" />
+              <e p="Utils" t="Include">
+                <e p="Multinomial.cs" t="Include" />
+                <e p="RandomNormal.cs" t="Include" />
+              </e>
+            </e>
+            <e p="LearningBrain.cs" t="Include" />
+            <e p="Monitor.cs" t="Include" />
+            <e p="PlayerBrain.cs" t="Include" />
+            <e p="ResetParameters.cs" t="Include" />
+            <e p="RpcCommunicator.cs" t="Include" />
+            <e p="SocketCommunicator.cs" t="Include" />
+            <e p="Startup.cs" t="Include" />
+            <e p="UnityAgentsException.cs" t="Include" />
+            <e p="Utilities.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="BallOwnerManager.cs" t="Include" />
+          <e p="ExtensionMethods.cs" t="Include" />
+          <e p="GameManager.cs" t="Include" />
+          <e p="GridSoccerUtil.cs" t="Include" />
+          <e p="InstantiateGameBoard.cs" t="Include" />
+          <e p="Player.cs" t="Include" />
+          <e p="PlayerAgent.cs" t="Include" />
+          <e p="UI.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Barracuda-editor.csproj" t="IncludeRecursive" />
+      <e p="GridSoccer.sln" t="IncludeFlat" />
+      <e p="iOSBLAS.csproj" t="IncludeRecursive" />
+      <e p="MacBLAS.csproj" t="IncludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

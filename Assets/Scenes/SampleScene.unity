@@ -309,7 +309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   broadcastHub:
     broadcastingBrains:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: b8b65797684489547a44173f46b8609c, type: 2}
     m_BrainsToControl: []
   m_TrainingConfiguration:
     width: 80
@@ -434,7 +434,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: -7.196507e-24, z: 4.46e-43, w: 0}
+  m_BoundingSphereOverride: {x: 1.815e-42, y: 1.05e-43, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0

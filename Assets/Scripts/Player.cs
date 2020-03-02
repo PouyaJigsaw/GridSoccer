@@ -3,7 +3,7 @@ using System;
 using MLAgents;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : Agent
 {
     public enum PlayerType
     {
@@ -21,14 +21,20 @@ public class Player : MonoBehaviour
     float blockPace = 1.2f;
     public bool hasBall;
     public GameObject ball;
-    
+
+
+    private GameObject opponent;
     private int NWSE;
     private float cycleTime;
 
     private bool flagMoved;
 
+    private Vector2 thisPosition;
+    private Vector2 opponentPosition;
     private bool flagGoal;
     public GameManager.PlayerColor playerColor;
+
+    private int direction;
     // Start is called before the first frame update
     
     void Start()
@@ -37,24 +43,11 @@ public class Player : MonoBehaviour
         flagMoved = false;
         cycleTime = GameManager.instance.cycleTime;
 
-        if (GameManager.instance.whoHasBall.Equals(playerColor))
-        {
-            hasBall = true;
-        }
-        else
-            hasBall = false;
-
-        
-        if (hasBall)
-        {
-            ball.SetActive(true);
-        }
-        else
-        {
-            ball.SetActive(false);
-        }
-        
+        if (GameManager.instance.whoHasBall.Equals(playerColor)) { hasBall = true; }else {hasBall = false;}
+        if (hasBall) { ball.SetActive(true); }    else     { ball.SetActive(false); }
         playerPos = gameObject.transform.position;
+        if (this.gameObject.CompareTag("Green Player")) { opponent = GameObject.FindGameObjectWithTag("Red Player"); }      else      { opponent = GameObject.FindGameObjectWithTag("Green Player"); }
+        
         
         InvokeRepeating("Move", 0.5f, cycleTime);
         
@@ -80,14 +73,17 @@ public class Player : MonoBehaviour
             ball.SetActive(false);
         }
         
+        Debug.Log(tag + ": " + opponent.transform.position);
         
         CheckInput();
+        RequestDecision();
     }
     void Move()
     {
         flagGoal = false;
         if(flagMoved)
         {
+            SetReward(-0.01f);
             switch (NWSE)
                 {
                     case 0:
@@ -132,6 +128,7 @@ public class Player : MonoBehaviour
                                             SetNewPosition(PlayerDirection.Right);
                                                 if (TheyCollideInTheSameBlock())
                                                 {
+                                                    if(hasBall) {SetReward(-0.5f);} else {SetReward(0.5f);}
                                                     SetNewPosition(PlayerDirection.Left);
                                                     GameManager.instance.ChangeBallOwner();
                                                 }
@@ -148,6 +145,7 @@ public class Player : MonoBehaviour
         {
             if (gameObject.CompareTag("Green Player") && hasBall)
             {
+                SetReward(1f);
                 flagGoal = true;
                 GameManager.instance.GreenScores();
             }
@@ -159,6 +157,7 @@ public class Player : MonoBehaviour
         {
             if (gameObject.CompareTag("Red Player") && hasBall)
             {
+                SetReward(1f);
                 flagGoal = true;
                 GameManager.instance.RedScores();
                 
@@ -168,6 +167,7 @@ public class Player : MonoBehaviour
     #endregion
     private static bool TheyCollideInTheSameBlock()
     {
+        
         return GameManager.instance.players[0].transform.position == GameManager.instance.players[1].transform.position;
     }
     #region Not out of board
@@ -220,5 +220,36 @@ void SetNewPosition(Enum newDirection)
         case PlayerDirection.Left: {     playerPos.z += blockPace;                     gameObject.transform.position = playerPos; break; }
         case PlayerDirection.Right: {    playerPos.z -= blockPace;                     gameObject.transform.position = playerPos; break; }
     }
+}
+
+
+public override void CollectObservations()
+{
+    opponentPosition = new Vector2(opponent.transform.position.x,opponent.transform.position.z);
+    thisPosition = new Vector2(opponent.transform.position.x,opponent.transform.position.z);
+    
+    AddVectorObs(thisPosition);
+    AddVectorObs(opponentPosition);
+    AddVectorObs(GameManager.instance.leftGoal);
+    AddVectorObs(GameManager.instance.rightGoal);
+    AddVectorObs(hasBall);
+    
+}
+
+
+public override void AgentAction(float[] vectorAction, string textAction)
+{
+    direction = (int) vectorAction[0];
+    
+    switch (direction)
+    {
+        case 0:   { NWSE = 0; flagMoved = true; break;}
+        case 1:   { NWSE = 1; flagMoved = true; break;}
+        case 2:   { NWSE = 2; flagMoved = true; break;}
+        case 3:   { NWSE = 3; flagMoved = true; break;}
+        
+    }
+    
+    
 }
 }

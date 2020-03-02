@@ -5,7 +5,9 @@ using UnityEngine.UI;
 using MLAgents;
 
 
-public partial class GameManager : MonoBehaviour
+
+
+public partial class GameManager : Academy
 {
     public static GameManager instance;
     

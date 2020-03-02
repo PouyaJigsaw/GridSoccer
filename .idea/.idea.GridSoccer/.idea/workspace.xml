@@ -1,19 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="21dec8b5-0c8e-49f3-93a6-babedc687e21" name="Default Changelist" comment="" />
+    <list default="true" id="21dec8b5-0c8e-49f3-93a6-babedc687e21" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.GridSoccer/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerLearningBrain.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerLearningBrain.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GridSoccer/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GridSoccer/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GridSoccer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GridSoccer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GreenPlayer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GreenPlayer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/RedPlayer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/RedPlayer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridSoccerUtil.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ML-Agents/Examples/Tennis/Scripts/TennisAgent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ML-Agents/Scripts/Agent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ML-Agents/Examples/Tennis/Scripts/TennisAcademy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ML-Agents/Examples/Basic/Scripts/BasicAgent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ML-Agents/Examples/Basic/Scripts/BasicAcademy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ML-Agents/Examples/Tennis/Scripts/TennisArea.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://P:/Game Dev/Maze Generator/Assets/DarkMaze/Scripts/Managers/InventoryManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/InstantiateGameBoard.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ML-Agents/Examples/GridWorld/Scripts/GridAcademy.cs" root0="FORCE_HIGHLIGHTING" />
@@ -22,6 +39,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerAgent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ML-Agents/Examples/GridWorld/Scripts/GridAgent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ML-Agents/Scripts/Academy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ExtensionMethods.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -37,16 +55,23 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.BallOwnerManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BallOwnerManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/ML-Agents/Examples/GridWorld/Scripts/GridAcademy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1UvU6XfV52jlzey6lL1cwJF9cyS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -109,7 +134,7 @@
       <workItem from="1582277989716" duration="6468000" />
       <workItem from="1582706579115" duration="1705000" />
       <workItem from="1582966044844" duration="7985000" />
-      <workItem from="1583135988216" duration="2475000" />
+      <workItem from="1583135988216" duration="9919000" />
     </task>
     <servers />
   </component>
@@ -118,7 +143,19 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
   </component>
   <component name="XDebuggerManager">

@@ -7,7 +7,7 @@ using MLAgents;
 
 
 
-public partial class GameManager : Academy
+public partial class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     
@@ -112,5 +112,7 @@ public partial class GameManager : Academy
         Time.timeScale = 1;
         
     }
+
+
 
 }

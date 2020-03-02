@@ -73,10 +73,9 @@ public class Player : Agent
             ball.SetActive(false);
         }
         
-        Debug.Log(tag + ": " + opponent.transform.position);
+
         
         CheckInput();
-        RequestDecision();
     }
     void Move()
     {
@@ -225,13 +224,12 @@ void SetNewPosition(Enum newDirection)
 
 public override void CollectObservations()
 {
-    opponentPosition = new Vector2(opponent.transform.position.x,opponent.transform.position.z);
-    thisPosition = new Vector2(opponent.transform.position.x,opponent.transform.position.z);
+
     
-    AddVectorObs(thisPosition);
-    AddVectorObs(opponentPosition);
-    AddVectorObs(GameManager.instance.leftGoal);
-    AddVectorObs(GameManager.instance.rightGoal);
+    AddVectorObs(transform.position);
+    AddVectorObs(opponent.transform.position);
+    AddVectorObs(GameManager.instance.leftGoal.transform.position);
+    AddVectorObs(GameManager.instance.rightGoal.transform.position);
     AddVectorObs(hasBall);
     
 }
@@ -240,7 +238,7 @@ public override void CollectObservations()
 public override void AgentAction(float[] vectorAction, string textAction)
 {
     direction = (int) vectorAction[0];
-    
+    Debug.Log(direction);
     switch (direction)
     {
         case 0:   { NWSE = 0; flagMoved = true; break;}

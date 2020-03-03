@@ -82,7 +82,7 @@ public class Player : Agent
         flagGoal = false;
         if(flagMoved)
         {
-            SetReward(-0.01f);
+            AddReward(-0.001f);
             switch (NWSE)
                 {
                     case 0:
@@ -127,7 +127,7 @@ public class Player : Agent
                                             SetNewPosition(PlayerDirection.Right);
                                                 if (TheyCollideInTheSameBlock())
                                                 {
-                                                    if(hasBall) {SetReward(-0.5f);} else {SetReward(0.5f);}
+                                                    if(hasBall) {AddReward(-0.5f);} else {AddReward(0.5f);}
                                                     SetNewPosition(PlayerDirection.Left);
                                                     GameManager.instance.ChangeBallOwner();
                                                 }
@@ -144,7 +144,7 @@ public class Player : Agent
         {
             if (gameObject.CompareTag("Green Player") && hasBall)
             {
-                SetReward(1f);
+                
                 flagGoal = true;
                 GameManager.instance.GreenScores();
             }
@@ -157,7 +157,7 @@ public class Player : Agent
         {
             if (gameObject.CompareTag("Red Player") && hasBall)
             {
-                SetReward(1f);
+               
                 flagGoal = true;
                 GameManager.instance.RedScores();
                 
@@ -239,7 +239,6 @@ public override void CollectObservations()
 public override void AgentAction(float[] vectorAction, string textAction)
 {
     direction = (int) vectorAction[0];
-    Debug.Log(direction);
     switch (direction)
     {
         case 0:   { NWSE = 0; flagMoved = true; break;}

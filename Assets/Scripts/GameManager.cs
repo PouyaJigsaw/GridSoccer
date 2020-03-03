@@ -76,7 +76,6 @@ public partial class GameManager : MonoBehaviour
         InvokeRepeating("TimeInvoke",0.5f, cycleTime);
         InvokeRepeating("ZeroTheChangeBallOwnerNum", 0.5f, cycleTime + Time.deltaTime);
         InstantiateGameBoard();
-        Debug.Log("Green Player Pos Init:" + greenPlayerPosInit);
         greenPlayerScript = players[1].GetComponent<Player>();
         redPlayerScript = players[0].GetComponent<Player>();
         

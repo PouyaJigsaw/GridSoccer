@@ -16,6 +16,10 @@ public partial class GameManager // UI Manager
         WhoScoredLastTime = PlayerColor.Red;
         redScore++;
         redScoreText.text = redScore.ToString();
+        greenPlayerScript.SetReward(0f);
+        redPlayerScript.AddReward(+1f);
+        greenPlayerScript.Done();
+        redPlayerScript.Done();
         Reset();
     }
 
@@ -24,6 +28,10 @@ public partial class GameManager // UI Manager
         WhoScoredLastTime = PlayerColor.Green;
         greenScore++;
         greenScoreText.text = greenScore.ToString();
+        greenPlayerScript.AddReward(+1f);
+        redPlayerScript.SetReward(0f);
+        greenPlayerScript.Done();
+        redPlayerScript.Done();
         Reset();
     }
 

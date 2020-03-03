@@ -319,7 +319,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   timerText: {fileID: 298084926}
-  cycleTime: 1
+  cycleTime: 0.4
   WhoScoredLastTime: 0
   rightGoal: {fileID: 4129386348947656866, guid: 842cd72c3fc75284b853be4789b086be,
     type: 3}
@@ -707,8 +707,7 @@ MonoBehaviour:
   broadcastHub:
     broadcastingBrains:
     - {fileID: 11400000, guid: b8b65797684489547a44173f46b8609c, type: 2}
-    m_BrainsToControl:
-    - {fileID: 11400000, guid: b8b65797684489547a44173f46b8609c, type: 2}
+    m_BrainsToControl: []
   m_TrainingConfiguration:
     width: 80
     height: 80

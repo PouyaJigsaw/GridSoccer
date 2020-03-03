@@ -17,3 +17,5 @@ Here is a picture of the game:
 
 ![GridSoccer](https://i.ibb.co/9s9H8Z5/photo-2020-03-03-12-28-13.jpg)
 
+
+Each player can move four directions and they can only move one block, between cycles. For instance, if the cycle is 0.5s then every 0.5s each player can move.

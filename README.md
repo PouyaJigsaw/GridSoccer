@@ -15,5 +15,5 @@ Here is a picture of the game:
 
 
 
-![GridSoccer](https://ibb.co/J5RjB3J)
+![GridSoccer](https://i.ibb.co/9s9H8Z5/photo-2020-03-03-12-28-13.jpg)
 

@@ -46,7 +46,7 @@ public class Player : Agent
         if (GameManager.instance.whoHasBall.Equals(playerColor)) { hasBall = true; }else {hasBall = false;}
         if (hasBall) { ball.SetActive(true); }    else     { ball.SetActive(false); }
         playerPos = gameObject.transform.position;
-        if (this.gameObject.CompareTag("Green Player")) { opponent = GameObject.FindGameObjectWithTag("Red Player"); }      else      { opponent = GameObject.FindGameObjectWithTag("Green Player"); }
+        if (gameObject.CompareTag("Green Player")) { opponent = GameObject.FindGameObjectWithTag("Red Player"); }      else      { opponent = GameObject.FindGameObjectWithTag("Green Player"); }
         
         
         InvokeRepeating("Move", 0.5f, cycleTime);
@@ -148,6 +148,7 @@ public class Player : Agent
                 flagGoal = true;
                 GameManager.instance.GreenScores();
             }
+            
         }
     }
     private void CheckIfScore_Red()

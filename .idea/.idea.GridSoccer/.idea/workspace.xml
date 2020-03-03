@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21dec8b5-0c8e-49f3-93a6-babedc687e21" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GridSoccerAcademy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/summaries/ppo-0_timers.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trainer_config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GridSoccer/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GridSoccer/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GridSoccer/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GridSoccer/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/summaries/ppo_PlayerLearningBrain/events.out.tfevents.1583228884.LAPTOP-5K4I7KNG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GridSoccer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GridSoccer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GreenPlayer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GreenPlayer.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/summaries/ppo-0_timers.json" beforeDir="false" afterPath="$PROJECT_DIR$/summaries/ppo-0_timers.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,8 +53,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BallOwnerManager.cs" />
         <option value="$PROJECT_DIR$/Assets/ML-Agents/Examples/GridWorld/Scripts/GridAcademy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GridSoccerAcademy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
       </list>
     </option>
@@ -136,7 +133,8 @@
       <workItem from="1582706579115" duration="1705000" />
       <workItem from="1582966044844" duration="7985000" />
       <workItem from="1583135988216" duration="9919000" />
-      <workItem from="1583157285406" duration="1701000" />
+      <workItem from="1583157285406" duration="2441000" />
+      <workItem from="1583226828288" duration="1995000" />
     </task>
     <servers />
   </component>

@@ -98,7 +98,7 @@ public partial class GameManager : MonoBehaviour
     }
 
     private void ResetPlayerPosition()
-    {   Debug.Log("Green Player Pos Init:" + greenPlayerPosInit);
+    {  
         players[1].transform.position = greenPlayerPosInit;
         players[0].transform.position = redPlayerPosInit;
         greenPlayerScript.playerPos =  greenPlayerPosInit;

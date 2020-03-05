@@ -270,6 +270,7 @@
           <e p="BallOwnerManager.cs" t="Include" />
           <e p="ExtensionMethods.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
+          <e p="GridSoccerAcademy.cs" t="Include" />
           <e p="GridSoccerUtil.cs" t="Include" />
           <e p="InstantiateGameBoard.cs" t="Include" />
           <e p="Player.cs" t="Include" />

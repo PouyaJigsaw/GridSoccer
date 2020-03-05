@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using MLAgents;
 
 
+
+
 public partial class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -74,13 +76,12 @@ public partial class GameManager : MonoBehaviour
         InvokeRepeating("TimeInvoke",0.5f, cycleTime);
         InvokeRepeating("ZeroTheChangeBallOwnerNum", 0.5f, cycleTime + Time.deltaTime);
         InstantiateGameBoard();
-        Debug.Log("Green Player Pos Init:" + greenPlayerPosInit);
         greenPlayerScript = players[1].GetComponent<Player>();
         redPlayerScript = players[0].GetComponent<Player>();
         
     }
 
-    void Reset()
+    public void Reset()
     {
         ResetCycleTime();
         ResetPlayerPosition();
@@ -96,7 +97,7 @@ public partial class GameManager : MonoBehaviour
     }
 
     private void ResetPlayerPosition()
-    {   Debug.Log("Green Player Pos Init:" + greenPlayerPosInit);
+    {  
         players[1].transform.position = greenPlayerPosInit;
         players[0].transform.position = redPlayerPosInit;
         greenPlayerScript.playerPos =  greenPlayerPosInit;
@@ -110,5 +111,7 @@ public partial class GameManager : MonoBehaviour
         Time.timeScale = 1;
         
     }
+
+
 
 }

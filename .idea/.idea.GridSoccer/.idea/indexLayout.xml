@@ -13,12 +13,15 @@
       <Path>ProjectSettings</Path>
     </explicitIncludes>
     <explicitExcludes>
+      <Path>.git</Path>
       <Path>.idea</Path>
       <Path>Build</Path>
       <Path>Library</Path>
       <Path>Logs</Path>
       <Path>Temp</Path>
+      <Path>models</Path>
       <Path>obj</Path>
+      <Path>summaries</Path>
     </explicitExcludes>
   </component>
 </project>

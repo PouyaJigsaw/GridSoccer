@@ -81,7 +81,7 @@ public partial class GameManager : MonoBehaviour
         
     }
 
-    void Reset()
+    public void Reset()
     {
         ResetCycleTime();
         ResetPlayerPosition();

@@ -34,11 +34,18 @@ public class Player : Agent
     private bool flagGoal;
     public GameManager.PlayerColor playerColor;
 
+    private Vector2 DistanceToGoal;
+    private GameObject goal;
+    private GameObject opponentGoal;
     private int direction;
     // Start is called before the first frame update
-    
+
+
+    private float middleLine;
     void Start()
     {
+        
+        middleLine = -0.6f;
         flagGoal = false;
         flagMoved = false;
         cycleTime = GameManager.instance.cycleTime;
@@ -46,7 +53,18 @@ public class Player : Agent
         if (GameManager.instance.whoHasBall.Equals(playerColor)) { hasBall = true; }else {hasBall = false;}
         if (hasBall) { ball.SetActive(true); }    else     { ball.SetActive(false); }
         playerPos = gameObject.transform.position;
-        if (gameObject.CompareTag("Green Player")) { opponent = GameObject.FindGameObjectWithTag("Red Player"); }      else      { opponent = GameObject.FindGameObjectWithTag("Green Player"); }
+        if (gameObject.CompareTag("Green Player"))
+        {
+            opponent = GameObject.FindGameObjectWithTag("Red Player");
+            opponentGoal = GameManager.instance.leftGoal;
+            goal = GameManager.instance.rightGoal;
+        }
+        else
+        {
+            opponent = GameObject.FindGameObjectWithTag("Green Player");
+            opponentGoal = GameManager.instance.rightGoal;
+            goal = GameManager.instance.leftGoal;
+        }
         
         
         InvokeRepeating("Move", 0.5f, cycleTime);
@@ -79,10 +97,11 @@ public class Player : Agent
     }
     void Move()
     {
+        MovementReward();
+
         flagGoal = false;
         if(flagMoved)
         {
-            AddReward(-0.001f);
             switch (NWSE)
                 {
                     case 0:
@@ -91,6 +110,7 @@ public class Player : Agent
                                             SetNewPosition(PlayerDirection.Up);
                                                 if (TheyCollideInTheSameBlock())
                                                 {
+                                                    if(hasBall) {AddReward(-0.5f);} else {AddReward(0.5f);}
                                                     SetNewPosition(PlayerDirection.Down);
                                                     GameManager.instance.ChangeBallOwner();
                                                 }
@@ -103,6 +123,7 @@ public class Player : Agent
                                             SetNewPosition(PlayerDirection.Left);
                                                 if (TheyCollideInTheSameBlock())
                                                 {
+                                                    if(hasBall) {AddReward(-0.5f);} else {AddReward(0.5f);}
                                                     SetNewPosition(PlayerDirection.Right);
                                                     GameManager.instance.ChangeBallOwner();
                                                 }
@@ -114,6 +135,7 @@ public class Player : Agent
                                             SetNewPosition(PlayerDirection.Down);
                                                 if (TheyCollideInTheSameBlock())
                                                 {
+                                                    if(hasBall) {AddReward(-0.5f);} else {AddReward(0.5f);}
                                                     SetNewPosition(PlayerDirection.Up);
                                                     GameManager.instance.ChangeBallOwner();
                                                 }
@@ -137,10 +159,69 @@ public class Player : Agent
             flagMoved = false;
         }
     }
+
+    private void MovementReward()
+    {
+        if (hasBall)
+        {
+            AddReward(-0.01f);
+
+            if (this.CompareTag("Green Player"))
+            {
+                if (transform.position.z < middleLine)
+                {
+                    AddReward(0.01f);
+                }
+                else
+                {
+                    AddReward(-0.01f);
+                }
+            }
+            else
+            {
+                if (transform.position.z > middleLine)
+                {
+                    AddReward(0.01f);
+                }
+                else
+                {
+                    AddReward(-0.01f);
+                }
+            }
+        }
+        else
+        {
+            AddReward(-0.02f);
+
+            if (this.CompareTag("Green Player"))
+            {
+                if (transform.position.z > middleLine)
+                {
+                    AddReward(0.01f);
+                }
+                else
+                {
+                    AddReward(-0.01f);
+                }
+            }
+            else
+            {
+                if (transform.position.z < middleLine)
+                {
+                    AddReward(0.01f);
+                }
+                else
+                {
+                    AddReward(-0.01f);
+                }
+            }
+        }
+    }
+
     #region Check if Player Score
     private void CheckIfScore_Green()
     {
-        if (playerPos.z - 1.1f < -7)
+        if (playerPos.z - 1.1f < -7 && playerPos.x < 0.6f && playerPos.x > -1.8f )
         {
             if (gameObject.CompareTag("Green Player") && hasBall)
             {
@@ -153,7 +234,7 @@ public class Player : Agent
     }
     private void CheckIfScore_Red()
     {
-        if (playerPos.z + 1.1f > 5.7f)
+        if (playerPos.z + 1.1f > 5.7f && playerPos.x < 0.6f && playerPos.x > -1.8f)
         {
             if (gameObject.CompareTag("Red Player") && hasBall)
             {
@@ -225,13 +306,20 @@ void SetNewPosition(Enum newDirection)
 
 public override void CollectObservations()
 {
+    if (hasBall)
+    {
+        DistanceToGoal = ExtensionMethods.ConvertToVector2(transform.position - opponentGoal.transform.position);
+    }
+    else
+    {
+        DistanceToGoal = ExtensionMethods.ConvertToVector2(transform.position - goal.transform.position);
+    }
 
-    
-    AddVectorObs(transform.position);
-    AddVectorObs(opponent.transform.position);
-    AddVectorObs(GameManager.instance.leftGoal.transform.position);
-    AddVectorObs(GameManager.instance.rightGoal.transform.position);
-    AddVectorObs(hasBall);
+
+    AddVectorObs(DistanceToGoal);
+    AddVectorObs(ExtensionMethods.ConvertToVector2(transform.position - opponent.transform.position));
+   
+ 
     
 }
 
@@ -249,5 +337,11 @@ public override void AgentAction(float[] vectorAction, string textAction)
     }
     
     
+}
+
+
+public override void AgentReset()
+{
+    GameManager.instance.Reset();
 }
 }

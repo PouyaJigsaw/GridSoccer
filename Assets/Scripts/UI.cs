@@ -17,7 +17,7 @@ public partial class GameManager // UI Manager
         redScore++;
         redScoreText.text = redScore.ToString();
         greenPlayerScript.SetReward(0f);
-        redPlayerScript.AddReward(+1f);
+        redPlayerScript.SetReward(+1f);
         greenPlayerScript.Done();
         redPlayerScript.Done();
         Reset();

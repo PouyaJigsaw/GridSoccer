@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21dec8b5-0c8e-49f3-93a6-babedc687e21" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerAgent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerAgent.cs" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GridSoccer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GridSoccer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +58,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/InstantiateGameBoard.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerAgent.cs" />
+=======
+>>>>>>> Stashed changes
         <option value="$PROJECT_DIR$/Assets/Scripts/BoardManager.cs" />
       </list>
     </option>
@@ -129,7 +137,7 @@
       <workItem from="1582706579115" duration="1705000" />
       <workItem from="1582966044844" duration="7985000" />
       <workItem from="1583135988216" duration="2475000" />
-      <workItem from="1583498513157" duration="3327000" />
+      <workItem from="1583498513157" duration="4197000" />
     </task>
     <servers />
   </component>

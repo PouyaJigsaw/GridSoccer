@@ -1,10 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BoardManager : MonoBehaviour
 {
 
+    public static BoardManager instance;
+    
     public GameObject greenPlayer;
 
     public GameObject redPlayer;
@@ -28,7 +31,18 @@ public class BoardManager : MonoBehaviour
     {
         Red, Green
     }
-    
+
+
+    private void Awake()
+    {
+        whoHasBall = PlayerColor.Green;
+        
+        if (instance == null)
+            instance = this;
+
+
+    }
+
     private float cycleTime;
     // Start is called before the first frame update
     void Start()
@@ -81,4 +95,32 @@ public class BoardManager : MonoBehaviour
         ChangeBallOwnerForEveryScore();
     }
     
+    public void ChangeBallOwner()
+    {
+        if (changeNum < 1)
+        {
+            if (whoHasBall == PlayerColor.Green)
+            {
+                whoHasBall = PlayerColor.Red;
+            }
+            else
+            {
+                whoHasBall = PlayerColor.Green;
+            }
+        }
+
+        changeNum++;
+    }
+
+
+
+    public void RedScores()
+    {
+        whoScoredLastTime = PlayerColor.Red; 
+    }
+
+    public void GreenScores()
+    {
+        whoScoredLastTime = PlayerColor.Green;  
+    }
 }

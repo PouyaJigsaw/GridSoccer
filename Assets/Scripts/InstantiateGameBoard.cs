@@ -13,6 +13,7 @@ public partial class GameManager //GameBoardInsantiator
     private float length;
     public GameObject edge;
 
+    [SerializeField] private float numOfGameBoards;
     //inital Pos of red player
     
     //initial pos of green player

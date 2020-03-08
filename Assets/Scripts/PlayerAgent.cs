@@ -8,7 +8,7 @@ public class PlayerAgent : Agent
     private float cycle;
     private bool hasBall;
     private Vector3 playerPos;
-    private GameObject ball;
+    public GameObject ball;
 
 
     private GameObject opponent;
@@ -75,8 +75,8 @@ public class PlayerAgent : Agent
         else
         {
             opponent = GameObject.FindGameObjectWithTag("Green Player");
-            opponentGoal = GameManager.instance.rightGoal;
-            goal = GameManager.instance.leftGoal;
+            opponentGoal = BoardManager.instance.greenGoal;
+            goal = BoardManager.instance.redGoal;
         }
         
         
@@ -87,7 +87,7 @@ public class PlayerAgent : Agent
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.instance.whoHasBall.Equals(playerColor))
+        if (BoardManager.instance.whoHasBall.Equals(playerColor))
         {
             hasBall = true;
         }

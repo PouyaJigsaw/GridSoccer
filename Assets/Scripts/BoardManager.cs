@@ -35,6 +35,8 @@ public class BoardManager : MonoBehaviour
     [HideInInspector] public PlayerColor whoHasBall;
 
     [HideInInspector] public PlayerColor whoScoredLastTime;
+    
+    [HideInInspector] public float cycleTime;
     public enum PlayerColor
     {
         Red, Green
@@ -51,7 +53,7 @@ public class BoardManager : MonoBehaviour
 
     }
 
-    public float cycleTime;
+   
     // Start is called before the first frame update
     void Start()
     {

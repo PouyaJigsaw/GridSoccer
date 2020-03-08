@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     public enum PlayerType
     {
-        WASD, UpDownLeftRight, HeuristicAi, ReinforcementLearningAi
+        WASD, UpDownLeftRight
     }
 
     public enum PlayerDirection

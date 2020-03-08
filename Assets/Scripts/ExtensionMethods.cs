@@ -8,4 +8,10 @@ public static class ExtensionMethods
     {
         return boxCollider.bounds.size.x;
     }
+
+
+    public static Vector2 ConvertToVector2(this Vector3 vector)
+    {
+        return new Vector2(vector.x, vector.z);
+    }
 }

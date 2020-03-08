@@ -16,7 +16,15 @@ public class BoardManager : MonoBehaviour
 
     public GameObject greenGoal;
 
-
+    public GameObject middleBoardEdge;
+    public GameObject rightEdge;
+    public GameObject leftEdge;
+    public GameObject upEdge;
+    public GameObject downEdge;
+    public GameObject goalEdgeUp_Green;
+    public GameObject goalEdgeDown_Green;
+    public GameObject goalEdgeUp_Red;
+    public GameObject goalEdgeDown_Red;
     private Vector3 initPos_greenPlayer;
     private Vector3 initPos_redPlayer;
 
@@ -43,7 +51,7 @@ public class BoardManager : MonoBehaviour
 
     }
 
-    private float cycleTime;
+    public float cycleTime;
     // Start is called before the first frame update
     void Start()
     {

@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MLAgents;
+using UnityEngine.Experimental.PlayerLoop;
+
 public class PlayerAgent : Agent
 {
     private float cycle;
     private bool hasBall;
-    private Vector3 playerPos;
+    public Vector3 playerPos;
     public GameObject ball;
 
 
@@ -17,7 +19,7 @@ public class PlayerAgent : Agent
 
     private GameObject goal;
 
-    private BoardManager.PlayerColor playerColor;
+    public BoardManager.PlayerColor playerColor;
 
     private bool flagGoal;
     private bool flagMoved;
@@ -42,21 +44,28 @@ public class PlayerAgent : Agent
     {
         Up,Down,Left,Right
     }
+    
+    public enum PlayerType
+    {
+        WASD, UpDownLeftRight
+    }
+
+    public PlayerType playerType;
     // Start is called before the first frame update
     void Start()
     {
-        middleLine = BoardManager.instance.middleBoardEdge.transform.position.z;
-        leftLine = BoardManager.instance.leftEdge.transform.position.z;
-        rightLine = BoardManager.instance.rightEdge.transform.position.z;
-        upLine = BoardManager.instance.upEdge.transform.position.z;
-        downLine = BoardManager.instance.downEdge.transform.position.z;
+        middleLine = BoardManager.instance.middleBoardEdge.transform.localPosition.z;
+        leftLine = BoardManager.instance.leftEdge.transform.localPosition.z;
+        rightLine = BoardManager.instance.rightEdge.transform.localPosition.z;
+        upLine = BoardManager.instance.upEdge.transform.localPosition.x;
+        downLine = BoardManager.instance.downEdge.transform.localPosition.x;
 
-        goalLineDown_Green = BoardManager.instance.goalEdgeDown_Green.transform.position.x;
-        goalLineUp_Green = BoardManager.instance.goalEdgeUp_Green.transform.position.x;
-        goalLineDown_Red = BoardManager.instance.goalEdgeDown_Red.transform.position.x;
-        goalLineUp_Red = BoardManager.instance.goalEdgeUp_Red.transform.position.x;
-        
-        
+        goalLineDown_Green = BoardManager.instance.goalEdgeDown_Green.transform.localPosition.x;
+        goalLineUp_Green = BoardManager.instance.goalEdgeUp_Green.transform.localPosition.x;
+        goalLineDown_Red = BoardManager.instance.goalEdgeDown_Red.transform.localPosition.x;
+        goalLineUp_Red = BoardManager.instance.goalEdgeUp_Red.transform.localPosition.x;
+
+    
         
         flagGoal = false;
         flagMoved = false;
@@ -64,7 +73,7 @@ public class PlayerAgent : Agent
 
         if (BoardManager.instance.whoHasBall.Equals(playerColor)) { hasBall = true; }else {hasBall = false;}
         if (hasBall) { ball.SetActive(true); }    else     { ball.SetActive(false); }
-        playerPos = gameObject.transform.position;
+        playerPos = gameObject.transform.localPosition;
         
         if (gameObject.CompareTag("Green Player"))
         {
@@ -80,7 +89,7 @@ public class PlayerAgent : Agent
         }
         
         
-        InvokeRepeating("Move", 0.5f, cycle);
+        InvokeRepeating("Move", 0.5f, 0.5f);
 
     }
 
@@ -105,6 +114,7 @@ public class PlayerAgent : Agent
         }
 
 
+        CheckInput();
     }
     
         void Move()
@@ -180,7 +190,7 @@ public class PlayerAgent : Agent
 
             if (this.CompareTag("Green Player"))
             {
-               if (transform.position.z < middleLine)
+               if (transform.localPosition.z < middleLine)
                 {
                     AddReward(0.01f);
                 }
@@ -191,7 +201,7 @@ public class PlayerAgent : Agent
             }
             else
             {
-                if (transform.position.z > middleLine)
+                if (transform.localPosition.z > middleLine)
                 {
                     AddReward(0.01f);
                 }
@@ -207,7 +217,7 @@ public class PlayerAgent : Agent
 
             if (this.CompareTag("Green Player"))
             {
-                if (transform.position.z > middleLine)
+                if (transform.localPosition.z > middleLine)
                 {
                     AddReward(0.01f);
                 }
@@ -218,7 +228,7 @@ public class PlayerAgent : Agent
             }
             else
             {
-                if (transform.position.z < middleLine)
+                if (transform.localPosition.z < middleLine)
                 {
                     AddReward(0.01f);
                 }
@@ -235,7 +245,6 @@ public class PlayerAgent : Agent
         {
             if (gameObject.CompareTag("Green Player") && hasBall)
             {
-                
                 flagGoal = true;
                 BoardManager.instance.GreenScores();
             }
@@ -248,7 +257,7 @@ public class PlayerAgent : Agent
         {
             if (gameObject.CompareTag("Red Player") && hasBall)
             {
-               
+             
                 flagGoal = true;
                 BoardManager.instance.RedScores();
                 
@@ -259,8 +268,7 @@ public class PlayerAgent : Agent
     
     private static bool TheyCollideInTheSameBlock()
     {
-        //BOARDMANAGER
-        return BoardManager.instance.greenPlayer.transform.position == BoardManager.instance.redPlayer.transform.position;
+        return BoardManager.instance.greenPlayer.transform.localPosition == BoardManager.instance.redPlayer.transform.localPosition;
     }
     private bool NotOutOfBoard_EastSide()
     {
@@ -284,6 +292,7 @@ public class PlayerAgent : Agent
     
     public override void AgentAction(float[] vectorAction, string textAction)
     {
+        
         direction = (int) vectorAction[0];
         switch (direction)
         {
@@ -303,16 +312,16 @@ public class PlayerAgent : Agent
     {
         if (hasBall)
         {
-            DistanceToGoal = ExtensionMethods.ConvertToVector2(transform.position - opponentGoal.transform.position);
+            DistanceToGoal = ExtensionMethods.ConvertToVector2(transform.localPosition - opponentGoal.transform.localPosition);
         }
         else
         {
-            DistanceToGoal = ExtensionMethods.ConvertToVector2(transform.position - goal.transform.position);
+            DistanceToGoal = ExtensionMethods.ConvertToVector2(transform.localPosition - goal.transform.localPosition);
         }
 
 
         AddVectorObs(DistanceToGoal);
-        AddVectorObs(ExtensionMethods.ConvertToVector2(transform.position - opponent.transform.position));
+        AddVectorObs(ExtensionMethods.ConvertToVector2(transform.localPosition - opponent.transform.localPosition));
    
  
     
@@ -322,12 +331,32 @@ public class PlayerAgent : Agent
     {
         switch (newDirection)
         { 
-            case PlayerDirection.Up: {       playerPos.x += blockPace;                     gameObject.transform.position = playerPos; break; }
-            case PlayerDirection.Down: {     playerPos.x -= blockPace;                     gameObject.transform.position = playerPos; break; }
-            case PlayerDirection.Left: {     playerPos.z += blockPace;                     gameObject.transform.position = playerPos; break; }
-            case PlayerDirection.Right: {    playerPos.z -= blockPace;                     gameObject.transform.position = playerPos; break; }
+            case PlayerDirection.Up: {       playerPos.x += blockPace;                     gameObject.transform.localPosition = playerPos; break; }
+            case PlayerDirection.Down: {     playerPos.x -= blockPace;                     gameObject.transform.localPosition = playerPos; break; }
+            case PlayerDirection.Left: {     playerPos.z += blockPace;                     gameObject.transform.localPosition = playerPos; break; }
+            case PlayerDirection.Right: {    playerPos.z -= blockPace;                     gameObject.transform.localPosition = playerPos; break; }
         }
     }
 
 
+    void CheckInput()
+    {
+        if (playerType == PlayerType.WASD)
+        
+        {
+            if (Input.GetKeyDown(KeyCode.W))           { NWSE = 0; flagMoved = true;}
+            else if (Input.GetKeyDown(KeyCode.A))      { NWSE = 1; flagMoved = true; }
+            else if (Input.GetKeyDown(KeyCode.S))      { NWSE = 2; flagMoved = true; }
+            else if (Input.GetKeyDown(KeyCode.D))      { NWSE = 3; flagMoved = true; }
+        }
+        
+        else if (playerType == PlayerType.UpDownLeftRight)
+        
+        {
+            if      (Input.GetKeyDown(KeyCode.UpArrow))     { NWSE = 0; flagMoved = true;}
+            else if (Input.GetKeyDown(KeyCode.LeftArrow))   { NWSE = 1; flagMoved = true;}
+            else if (Input.GetKeyDown(KeyCode.DownArrow))   { NWSE = 2; flagMoved = true;}
+            else if (Input.GetKeyDown(KeyCode.RightArrow))  { NWSE = 3; flagMoved = true;}
+        }
+    }
 }

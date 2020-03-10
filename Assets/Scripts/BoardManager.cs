@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BoardManager : MonoBehaviour
 {
@@ -28,8 +29,8 @@ public class BoardManager : MonoBehaviour
     private Vector3 initPos_greenPlayer;
     private Vector3 initPos_redPlayer;
 
-    private Player greenPlayerScript;
-    private Player redPlayerScript;
+    private PlayerAgent greenPlayerScript;
+    private PlayerAgent redPlayerScript;
     private float changeNum;
 
     [HideInInspector] public PlayerColor whoHasBall;
@@ -37,6 +38,10 @@ public class BoardManager : MonoBehaviour
     [HideInInspector] public PlayerColor whoScoredLastTime;
     
     [HideInInspector] public float cycleTime;
+
+
+
+   
     public enum PlayerColor
     {
         Red, Green
@@ -57,15 +62,16 @@ public class BoardManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cycleTime = Time.fixedDeltaTime;
+      
+        cycleTime = Time.fixedDeltaTime * 2;
 
-        greenPlayerScript = greenPlayer.GetComponent<Player>();
-        redPlayerScript = redPlayer.GetComponent<Player>();
+        greenPlayerScript = greenPlayer.GetComponent<PlayerAgent>();
+        redPlayerScript = redPlayer.GetComponent<PlayerAgent>();
         
-        initPos_greenPlayer = greenPlayer.transform.position;
-        initPos_redPlayer = redPlayer.transform.position;
+        initPos_greenPlayer = greenPlayer.transform.localPosition;
+        initPos_redPlayer = redPlayer.transform.localPosition;
         
-        InvokeRepeating("ZeroTheChangeBallOwnerNum", 0.5f, cycleTime + cycleTime/2);
+        InvokeRepeating("ZeroTheChangeBallOwnerNum", 0.5f, cycleTime + cycleTime/4);
     }
 
     // Update is called once per frame
@@ -78,6 +84,8 @@ public class BoardManager : MonoBehaviour
     {
         greenPlayerScript.playerPos = initPos_greenPlayer;
         redPlayerScript.playerPos = initPos_redPlayer;
+        greenPlayer.transform.localPosition = initPos_greenPlayer;
+        redPlayer.transform.localPosition = initPos_redPlayer;
     }
     private void ZeroTheChangeBallOwnerNum()
     {
@@ -126,11 +134,26 @@ public class BoardManager : MonoBehaviour
 
     public void RedScores()
     {
-        whoScoredLastTime = PlayerColor.Red; 
+        whoScoredLastTime = PlayerColor.Red;
+        UIManager.instance.RedScorePlus();
+        greenPlayerScript.SetReward(0);
+        redPlayerScript.AddReward(2f);
+        greenPlayerScript.Done();
+        redPlayerScript.Done();
+        Reset();
     }
 
     public void GreenScores()
     {
-        whoScoredLastTime = PlayerColor.Green;  
+        
+        whoScoredLastTime = PlayerColor.Green;
+       UIManager.instance.greenScorePlus();
+        redPlayerScript.SetReward(0);
+        greenPlayerScript.AddReward(2f);
+        greenPlayerScript.Done();
+        redPlayerScript.Done();
+        
+        
+        Reset();
     }
 }

@@ -277,6 +277,7 @@
           <e p="Player.cs" t="Include" />
           <e p="PlayerAgent.cs" t="Include" />
           <e p="UI.cs" t="Include" />
+          <e p="UIManager.cs" t="Include" />
         </e>
       </e>
       <e p="Barracuda-editor.csproj" t="IncludeRecursive" />

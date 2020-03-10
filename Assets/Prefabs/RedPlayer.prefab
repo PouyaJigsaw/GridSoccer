@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2234364292548167827}
   - component: {fileID: 2234364292548167826}
   - component: {fileID: 2234364292548167825}
-  - component: {fileID: 4743749520627479991}
   m_Layer: 0
   m_Name: RedPlayer
   m_TagString: Red Player
@@ -95,32 +94,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &4743749520627479991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2234364292548167824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d9ad55128e5b2547a41bf7b6462d672, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  brain: {fileID: 0}
-  agentParameters:
-    agentCameras: []
-    agentRenderTextures: []
-    maxStep: 0
-    resetOnDone: 1
-    onDemandDecision: 0
-    numberOfActionsBetweenDecisions: 1
-  playerType: 1
-  playerPos: {x: 0, y: 0, z: 0}
-  blockPace: 1.2
-  hasBall: 0
-  ball: {fileID: 6353298274216708337}
-  playerColor: 0
 --- !u!1001 &8076943508566882658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -195,12 +168,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf7ad5d510a414640b105f6fa318588e, type: 3}
---- !u!1 &6353298274216708337 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2899300344478347667, guid: cf7ad5d510a414640b105f6fa318588e,
-    type: 3}
-  m_PrefabInstance: {fileID: 8076943508566882658}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6353298274216708341 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2899300344478347671, guid: cf7ad5d510a414640b105f6fa318588e,

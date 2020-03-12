@@ -276,6 +276,7 @@
           <e p="InstantiateGameBoard.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="PlayerAgent.cs" t="Include" />
+          <e p="PlayerAgent_GameScene.cs" t="Include" />
           <e p="UI.cs" t="Include" />
           <e p="UIManager.cs" t="Include" />
         </e>

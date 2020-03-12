@@ -31,7 +31,7 @@ public partial class GameManager : MonoBehaviour
     public float cycleTime;
 
     private Player greenPlayerScript;
-    private Player redPlayerScript;
+    private PlayerAgent_GameScene redPlayerScript;
     private int changeNum = 0;
 
     
@@ -75,11 +75,11 @@ public partial class GameManager : MonoBehaviour
         InvokeRepeating("ZeroTheChangeBallOwnerNum", 0.5f, cycleTime + Time.deltaTime);
         InstantiateGameBoard();
         greenPlayerScript = players[1].GetComponent<Player>();
-        redPlayerScript = players[0].GetComponent<Player>();
+        redPlayerScript = players[0].GetComponent<PlayerAgent_GameScene>();
         
     }
 
-    void Reset()
+    public void Reset()
     {
         ResetCycleTime();
         ResetPlayerPosition();

@@ -168,6 +168,10 @@ public class Player : MonoBehaviour
     #endregion
     private static bool TheyCollideInTheSameBlock()
     {
+        if (GameManager.instance.players[0].transform.position == GameManager.instance.players[1].transform.position)
+        {
+            Debug.Log("they collide");
+        }
         return GameManager.instance.players[0].transform.position == GameManager.instance.players[1].transform.position;
     }
     #region Not out of board

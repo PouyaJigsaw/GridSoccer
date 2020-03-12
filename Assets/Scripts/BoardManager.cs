@@ -71,7 +71,7 @@ public class BoardManager : MonoBehaviour
         initPos_greenPlayer = greenPlayer.transform.localPosition;
         initPos_redPlayer = redPlayer.transform.localPosition;
         
-        InvokeRepeating("ZeroTheChangeBallOwnerNum", 0.5f, cycleTime + cycleTime/4);
+        InvokeRepeating("ZeroTheChangeBallOwnerNum", 0.5f, 0.6f);
     }
 
     // Update is called once per frame
@@ -134,10 +134,10 @@ public class BoardManager : MonoBehaviour
 
     public void RedScores()
     {
+        
         whoScoredLastTime = PlayerColor.Red;
         UIManager.instance.RedScorePlus();
-        greenPlayerScript.SetReward(0);
-        redPlayerScript.AddReward(2f);
+        redPlayerScript.SetReward(1f);
         greenPlayerScript.Done();
         redPlayerScript.Done();
         Reset();
@@ -145,15 +145,15 @@ public class BoardManager : MonoBehaviour
 
     public void GreenScores()
     {
-        
+
         whoScoredLastTime = PlayerColor.Green;
-       UIManager.instance.greenScorePlus();
-        redPlayerScript.SetReward(0);
-        greenPlayerScript.AddReward(2f);
+        UIManager.instance.greenScorePlus();
+        greenPlayerScript.SetReward(1f);
         greenPlayerScript.Done();
         redPlayerScript.Done();
-        
-        
         Reset();
     }
+    
+    
+    
 }

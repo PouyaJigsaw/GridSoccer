@@ -6,8 +6,7 @@ using UnityEngine.UI;
 
 public class BoardManager : MonoBehaviour
 {
-
-    public static BoardManager instance;
+    
     
     public GameObject greenPlayer;
 
@@ -52,13 +51,8 @@ public class BoardManager : MonoBehaviour
     {
         whoHasBall = PlayerColor.Green;
         
-        if (instance == null)
-            instance = this;
-
-
     }
 
-   
     // Start is called before the first frame update
     void Start()
     {
@@ -77,7 +71,71 @@ public class BoardManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (greenPlayerScript.playerPos == redPlayerScript.playerPos)
+        {
+            ChangeBothPos();
+            if(greenPlayerScript.hasBall)
+            { greenPlayerScript.AddReward(-0.5f);}
+            else
+            {
+                greenPlayerScript.AddReward(-0.5f);
+            }
+            
+            if(redPlayerScript.hasBall)
+            { redPlayerScript.AddReward(-0.5f);}
+            else
+            {
+                redPlayerScript.AddReward(-0.5f);
+            }
+            
+            ChangeBallOwner();
+        }
+        /*  if (TheyCollideInTheSameBlock())
+  {
+      if(hasBall) {AddReward(-0.5f);} else {AddReward(0.5f);}
+      SetNewPosition(PlayerDirection.Left);
+      localBoardManager.ChangeBallOwner();
+  }
+ */
         
+        
+    }
+
+    private void ChangeBothPos()
+    {
+        if (greenPlayerScript._PlayerDirection == PlayerAgent.PlayerDirection.Down)
+        {
+            greenPlayerScript.SetNewPosition(PlayerAgent.PlayerDirection.Up);
+        }
+        else if (greenPlayerScript._PlayerDirection == PlayerAgent.PlayerDirection.Up)
+        {
+            greenPlayerScript.SetNewPosition(PlayerAgent.PlayerDirection.Down);
+        }
+        else if (greenPlayerScript._PlayerDirection == PlayerAgent.PlayerDirection.Left)
+        {
+            greenPlayerScript.SetNewPosition(PlayerAgent.PlayerDirection.Right);
+        }
+        else if (greenPlayerScript._PlayerDirection == PlayerAgent.PlayerDirection.Right)
+        {
+            greenPlayerScript.SetNewPosition(PlayerAgent.PlayerDirection.Left);
+        }
+
+        if (redPlayerScript._PlayerDirection == PlayerAgent.PlayerDirection.Down)
+        {
+            redPlayerScript.SetNewPosition(PlayerAgent.PlayerDirection.Up);
+        }
+        else if (redPlayerScript._PlayerDirection == PlayerAgent.PlayerDirection.Up)
+        {
+            redPlayerScript.SetNewPosition(PlayerAgent.PlayerDirection.Down);
+        }
+        else if (redPlayerScript._PlayerDirection == PlayerAgent.PlayerDirection.Left)
+        {
+            redPlayerScript.SetNewPosition(PlayerAgent.PlayerDirection.Right);
+        }
+        else if (redPlayerScript._PlayerDirection == PlayerAgent.PlayerDirection.Right)
+        {
+            redPlayerScript.SetNewPosition(PlayerAgent.PlayerDirection.Left);
+        }
     }
 
     void ResetPlayerPosition()
@@ -154,9 +212,17 @@ public class BoardManager : MonoBehaviour
         Reset();
     }
 
-    void CollideSameBlock()
+   public  bool SameDirection()
     {
-        switch
+        if (greenPlayerScript._PlayerDirection == redPlayerScript._PlayerDirection)
+        {
+            
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     
 }

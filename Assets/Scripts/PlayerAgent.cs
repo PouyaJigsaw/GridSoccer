@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using MLAgents;
 using UnityEngine.Experimental.PlayerLoop;
+using Random = System.Random;
 
 public class PlayerAgent : Agent
 {
@@ -48,7 +50,7 @@ private GameObject opponent;
     
     public enum PlayerType
     {
-        WASD, UpDownLeftRight
+        WASD, UpDownLeftRight, Random
     }
 
     public PlayerType playerType;
@@ -120,7 +122,7 @@ private GameObject opponent;
     
         void Move()
     {
-        //MovementReward();
+        MovementReward();
 
         flagGoal = false;
         if(flagMoved)
@@ -173,55 +175,55 @@ private GameObject opponent;
     {
         if (hasBall)
         {
-            AddReward(-0.01f);
+            AddReward(-1f/3000f);
 
             if (this.CompareTag("Green Player"))
             {
                if (transform.localPosition.z < middleLine)
                 {
-                    AddReward(0.01f);
+                    AddReward(1f/3000f);
                 }
                 else
                 {
-                    AddReward(-0.01f);
+                    AddReward(-1/3000f);
                 }
             }
             else
             {
                 if (transform.localPosition.z > middleLine)
                 {
-                    AddReward(0.01f);
+                    AddReward(1f/3000f);
                 }
                 else
                 {
-                    AddReward(-0.01f);
+                    AddReward(1f/3000f);
                 }
             }
         }
         else
         {
-            AddReward(-0.02f);
+            AddReward(-2f/3000f);
 
             if (this.CompareTag("Green Player"))
             {
                 if (transform.localPosition.z > middleLine)
                 {
-                    AddReward(0.01f);
+                    AddReward(1f/3000f);
                 }
                 else
                 {
-                    AddReward(-0.01f);
+                    AddReward(-1f/3000f);
                 }
             }
             else
             {
                 if (transform.localPosition.z < middleLine)
                 {
-                    AddReward(0.01f);
+                    AddReward(1f/3000f);
                 }
                 else
                 {
-                    AddReward(-0.01f);
+                    AddReward(-1f/3000f);
                 }
             }
         }
@@ -364,6 +366,12 @@ private GameObject opponent;
             else if (Input.GetKeyDown(KeyCode.DownArrow))   { NWSE = 2; flagMoved = true;}
             else if (Input.GetKeyDown(KeyCode.RightArrow))  { NWSE = 3; flagMoved = true;}
        
+            
+        }
+        else if (playerType == PlayerType.Random)
+        {
+           NWSE =  UnityEngine.Random.Range(0, 4);
+           flagMoved = true;
         }
     }
 }

@@ -271,7 +271,7 @@ public class PlayerAgent : Agent
     {
         if (BoardManager.instance.greenPlayer.transform.localPosition == BoardManager.instance.redPlayer.transform.localPosition)
         {
-            Debug.Log("they collide");
+            
         }
         return BoardManager.instance.redPlayer.transform.localPosition == BoardManager.instance.greenPlayer.transform.localPosition;
     }

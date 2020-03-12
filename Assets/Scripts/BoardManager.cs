@@ -153,7 +153,10 @@ public class BoardManager : MonoBehaviour
         redPlayerScript.Done();
         Reset();
     }
-    
-    
+
+    void CollideSameBlock()
+    {
+        switch
+    }
     
 }

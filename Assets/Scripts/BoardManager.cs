@@ -32,9 +32,9 @@ public class BoardManager : MonoBehaviour
     private PlayerAgent redPlayerScript;
     private float changeNum;
 
-    [HideInInspector] public PlayerColor whoHasBall;
+    public PlayerColor whoHasBall;
 
-    [HideInInspector] public PlayerColor whoScoredLastTime;
+    [HideInInspector] public PlayerColor whoStartedLastTime;
     
     [HideInInspector] public float cycleTime;
 
@@ -49,8 +49,8 @@ public class BoardManager : MonoBehaviour
 
     private void Awake()
     {
-        whoHasBall = PlayerColor.Green;
-        
+        whoStartedLastTime = whoHasBall;
+
     }
 
     // Start is called before the first frame update
@@ -155,13 +155,15 @@ public class BoardManager : MonoBehaviour
     
     private void ChangeBallOwnerForEveryScore()
     {
-        if (whoScoredLastTime == PlayerColor.Green)
+        if (whoStartedLastTime == PlayerColor.Green)
         {
-            whoHasBall = PlayerColor.Green;
+            whoStartedLastTime = PlayerColor.Red;
+            whoHasBall = PlayerColor.Red;
         }
         else
         {
-            whoHasBall = PlayerColor.Red;
+            whoStartedLastTime = PlayerColor.Green;
+            whoHasBall = PlayerColor.Green;
         }
     }
 
@@ -193,7 +195,7 @@ public class BoardManager : MonoBehaviour
     public void RedScores()
     {
         
-        whoScoredLastTime = PlayerColor.Red;
+       
         UIManager.instance.RedScorePlus();
         redPlayerScript.SetReward(1f);
         greenPlayerScript.Done();
@@ -204,7 +206,7 @@ public class BoardManager : MonoBehaviour
     public void GreenScores()
     {
 
-        whoScoredLastTime = PlayerColor.Green;
+        
         UIManager.instance.greenScorePlus();
         greenPlayerScript.SetReward(1f);
         greenPlayerScript.Done();

@@ -14,6 +14,7 @@ public class PlayerAgent : Agent
     public Vector3 playerPos;
     public GameObject ball;
 
+    private int hasBall_int;
     [SerializeField] private BoardManager localBoardManager;
 private GameObject opponent;
 
@@ -196,7 +197,7 @@ private GameObject opponent;
                 }
                 else
                 {
-                    AddReward(1f/3000f);
+                    AddReward(-1f/3000f);
                 }
             }
         }
@@ -318,13 +319,15 @@ private GameObject opponent;
         if (hasBall)
         {
             DistanceToGoal = ExtensionMethods.ConvertToVector2(transform.localPosition - opponentGoal.transform.localPosition).normalized;
+            hasBall_int = 1;
         }
         else
         {
-            DistanceToGoal = ExtensionMethods.ConvertToVector2(transform.localPosition - goal.transform.localPosition).normalized;
+            DistanceToGoal = ExtensionMethods.ConvertToVector2(opponent.transform.localPosition - goal.transform.localPosition).normalized;
+            hasBall_int = 0;
         }
 
-
+        AddVectorObs(hasBall_int);
         AddVectorObs(DistanceToGoal);
         AddVectorObs(ExtensionMethods.ConvertToVector2(transform.localPosition - opponent.transform.localPosition).normalized);
    

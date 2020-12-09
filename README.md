@@ -2,7 +2,7 @@
 
 
 
-
+EDIT: The english summary of my bachelor's project is now available in the repo
 
 
 This simple video game is my bachelor's project for computer engineering degree. My aim is to implement reinforcement learning in this game using Unity MLToolkit.
